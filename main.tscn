@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://b57qqm1eu4yv2"]
+
+[ext_resource type="Script" uid="uid://bluecx7l5ng4x" path="res://Main.cs" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bobn8eo1simqb" path="res://board.tscn" id="1_ig7tw"]
+
+[node name="main" type="Node2D" unique_id=33979296]
+script = ExtResource("1_0xm2m")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1987459019]
+position = Vector2(1, 2)
+offset = Vector2(320, 320)
+
+[node name="Board" parent="." unique_id=1930651802 instance=ExtResource("1_ig7tw")]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=68963533]
+
+[node name="Layout" type="VBoxContainer" parent="UI" unique_id=535926273]
+custom_minimum_size = Vector2(200, 20)
+offset_right = 96.0
+offset_bottom = 140.0
+
+[node name="TurnLabel" type="Label" parent="UI/Layout" unique_id=1439917092]
+layout_mode = 2
+
+[node name="UndoButton" type="Button" parent="UI/Layout" unique_id=1834750207]
+layout_mode = 2
+text = "Undo
+
+"
+
+[node name="RestartButton" type="Button" parent="UI/Layout" unique_id=1599043234]
+layout_mode = 2
+text = "Restart"
+
+[node name="LoadButton" type="Button" parent="UI/Layout" unique_id=106747256]
+layout_mode = 2
+text = "Load Game"
+
+[node name="CapturedByWhiteContainer" type="HFlowContainer" parent="UI/Layout" unique_id=1368165520]
+custom_minimum_size = Vector2(-10, 0)
+layout_mode = 2
+
+[node name="CapturedByBlackContainer" type="HFlowContainer" parent="UI/Layout" unique_id=236844602]
+custom_minimum_size = Vector2(-10, 0)
+layout_mode = 2
+
+[node name="MoveHistoryScroll" type="ScrollContainer" parent="UI/Layout" unique_id=387197840]
+layout_mode = 2
+
+[node name="MoveHistoryLabel" type="Label" parent="UI/Layout/MoveHistoryScroll" unique_id=938876656]
+layout_mode = 2
+
+[node name="LevelSelectPanel" type="Panel" parent="UI" unique_id=2000865689]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuLayout" type="VBoxContainer" parent="UI/LevelSelectPanel" unique_id=742324115]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -308.5
+offset_top = -46.5
+offset_right = 308.5
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OpponentLabel" type="Label" parent="UI/LevelSelectPanel/MenuLayout" unique_id=1571090575]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="LevelButtons" type="HBoxContainer" parent="UI/LevelSelectPanel/MenuLayout" unique_id=520293305]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HumanVsHumanButton" type="Button" parent="UI/LevelSelectPanel/MenuLayout/LevelButtons" unique_id=1671715162]
+custom_minimum_size = Vector2(160, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Human vs Human"
+
+[node name="BeginnerButton" type="Button" parent="UI/LevelSelectPanel/MenuLayout/LevelButtons" unique_id=1317756745]
+custom_minimum_size = Vector2(160, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Beginner
+"
+
+[node name="IntermediateButton" type="Button" parent="UI/LevelSelectPanel/MenuLayout/LevelButtons" unique_id=26453759]
+custom_minimum_size = Vector2(160, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Intermediate"
+
+[node name="AdvancedButton" type="Button" parent="UI/LevelSelectPanel/MenuLayout/LevelButtons" unique_id=568745082]
+custom_minimum_size = Vector2(160, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Advanced"
+
+[node name="MasterButton" type="Button" parent="UI/LevelSelectPanel/MenuLayout/LevelButtons" unique_id=1446291956]
+custom_minimum_size = Vector2(160, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Master"
+
+[node name="GrandMasterButton" type="Button" parent="UI/LevelSelectPanel/MenuLayout/LevelButtons" unique_id=57987787]
+custom_minimum_size = Vector2(160, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Grand Master"
+
+[node name="LoadButton" type="Button" parent="UI/LevelSelectPanel/MenuLayout" unique_id=1307731418]
+custom_minimum_size = Vector2(160, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Load Game "
+
+[node name="GameOverPanel" type="Panel" parent="UI" unique_id=1532959191]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResultLayout" type="VBoxContainer" parent="UI/GameOverPanel" unique_id=363895559]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ResultLabel" type="Label" parent="UI/GameOverPanel/ResultLayout" unique_id=518286863]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenuButton" type="Button" parent="UI/GameOverPanel/ResultLayout/ResultLabel" unique_id=322996438]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Main menu"
+
+[node name="ExitButton" type="Button" parent="UI/GameOverPanel/ResultLayout/ResultLabel" unique_id=914302278]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Exit"

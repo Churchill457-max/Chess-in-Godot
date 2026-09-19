@@ -1,0 +1,39 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Chess"
+run/main_scene="uid://b57qqm1eu4yv2"
+config/features=PackedStringArray("4.6", "C#", "Forward Plus")
+boot_splash/show_image=false
+boot_splash/image="uid://of4t3ckd8k60"
+config/icon="uid://c7fdn88h1jx0d"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=4
+
+[dotnet]
+
+project/assembly_name="Chess"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true
